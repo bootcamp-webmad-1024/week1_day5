@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const person = {
+            firstName: 'Germán',
+            lastname: 'Álvarez',
+            celiac: false,
+            height: 1.85,
+            weight: 89,
+            birth: new Date(1986, 4, 23),
+            favDrink: 'Cacaolat',
+            hobbies: ['sky', 'gadgets', 'beer'],
+            occupation: {
+                job: 'Teacher',
+                company: 'Ironhack',
+                salary: 24000
+            },
+            subscriptions: [
+                {
+                    service: 'Netflix',
+                    cost: 12.99,
+                    active: true
+                },
+                {
+                    service: 'HBO',
+                    cost: 10.99,
+                    active: false
+                }
+            ]
+
+        }
+
+
+
+        // Type
+        console.log('El tipo de un objeto es', typeof person)
+
+
+        // Memory
+        const object1 = {}
+        const object2 = {}
+
+        const areEqual = object1 === object2
+
+        console.log('Los objetos generan puntos únicos de memoria', areEqual)
+
+
+        // Access (getter)
+        console.log('La persona se llama', person.firstName, person.lastname)
+
+
+        // Access (getter, alternative)
+        console.log('Mide', person['height'], 'metros')
+
+
+        // Access (setter)
+        person.celiac = true
+        person.hasDebt = false
+
+        console.log('Ahora la persona es', person)
+
+
+
+
+        // in operator
+        console.log(`¿La persona tiene edad?`, 'age' in person)
+
+        // keys method
+        console.log('Las claves del objeto son:', Object.keys(person))
+
+        // values method
+        console.log('Los valores del objeto son:', Object.values(person))
+
+
+
+
+        // Exercises
+        console.log('Mi salario es', person.occupation.salary)
+
+        person.hobbies.push('chess')
+        console.log('Tengo', person.hobbies.length, 'hobbies, y son', person.hobbies)
+
+        console.log('Tengo un total de', person.subscriptions.length, 'suscripciones')
+
+
+
+
+        let totalCost = 0
+
+        person.subscriptions.forEach(function (eachSubscription) {
+            totalCost += eachSubscription.cost
+        })
+
+        console.log('Me gasto', totalCost, 'en suscripciones')
+
+
+
+
+
+        const newService = {
+            service: 'Prime',
+            cost: 4.99,
+            active: true
+        }
+
+        person.subscriptions.push(newService)
+
+        console.log('Tengo un total de', person.subscriptions.length, 'suscripciones')
+
+
+
+    </script>
+
+
+</body>
+
+</html>
